@@ -1,0 +1,2 @@
+# hospitalcore
+Hospital core module
