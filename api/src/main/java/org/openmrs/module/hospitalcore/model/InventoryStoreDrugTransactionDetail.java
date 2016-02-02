@@ -71,8 +71,17 @@ public class InventoryStoreDrugTransactionDetail implements  Serializable , Comp
 	 private Concept frequency;
 	 private Integer noOfDays;
 	 private String comments;
-		
-	 public String getAttribute() {
+	 private Integer flag;
+	 
+	 public Integer getFlag() {
+		return flag;
+	}
+
+	public void setFlag(Integer flag) {
+		this.flag = flag;
+	}
+
+	public String getAttribute() {
 		return attribute;
 	}
 

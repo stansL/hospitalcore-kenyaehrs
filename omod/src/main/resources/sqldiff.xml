@@ -797,4 +797,16 @@
 			
 		</sql>
 	</diff>
+	<diff>
+		<version>5.9</version>
+		<author>Admin</author>
+		<date>January 30 2016</date>
+		<description>
+			Add column flag  in inventory_store_drug_transaction_detail table 
+		</description>
+		<sql>
+			ALTER TABLE inventory_store_drug_transaction_detail ADD flag integer;
+				
+		</sql>
+	</diff>	
 </sqldiff>

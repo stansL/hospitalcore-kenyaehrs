@@ -45,6 +45,7 @@
 		<many-to-one name="frequency" column="frequency_concept_id" class="org.openmrs.Concept" />
 		<property name="noOfDays" column="no_of_days" />
 		<property name="comments" column="comments" />
+		<property name="flag" column="flag"  />
 		<many-to-one name="parent" class="org.openmrs.module.hospitalcore.model.InventoryStoreDrugTransactionDetail"
 	        column="parent_id"  lazy="false" />	 
 	    <set name="subDetails"  table="inventory_store_drugs_transaction_detail" cascade="save-update,merge,evict" >
