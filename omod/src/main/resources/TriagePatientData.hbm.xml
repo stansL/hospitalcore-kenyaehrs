@@ -13,6 +13,7 @@
 		<many-to-one name="triageLogId" column="triage_log_id"  class="org.openmrs.module.hospitalcore.model.TriagePatientQueueLog"/>
 		<property name="weight" column="weight" />
 		<property name="height" column="height" />
+		<property name="BMI" column="BMI" />
 		<property name="mua" column="mua" />
 		<property name="chest" column="chest" />
 		<property name="abdominal" column="abdominal" />

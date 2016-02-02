@@ -31,6 +31,7 @@ public class TriagePatientData implements Serializable {
 	private TriagePatientQueueLog triageLogId;
 	private BigDecimal weight;
 	private BigDecimal height;
+	private BigDecimal BMI;
 	private BigDecimal mua;
 	private BigDecimal chest;
 	private BigDecimal abdominal;
@@ -190,5 +191,15 @@ public class TriagePatientData implements Serializable {
 	public void setCreatedOn(Date createdOn) {
 		this.createdOn = createdOn;
 	}
+
+	public BigDecimal getBMI() {
+		return BMI;
+	}
+
+	public void setBMI(BigDecimal BMI) {
+		this.BMI = BMI;
+	}
+
+	
 
 }

@@ -809,4 +809,16 @@
 				
 		</sql>
 	</diff>	
+	<diff>
+		<version>6.0</version>
+		<author>Admin</author>
+		<date>February 2 2016</date>
+		<description>
+			Add column BMI  in triage_patient_data table 
+		</description>
+		<sql>
+			ALTER TABLE triage_patient_data ADD BMI  DECIMAL(5,2);
+				
+		</sql>
+	</diff>	
 </sqldiff>
