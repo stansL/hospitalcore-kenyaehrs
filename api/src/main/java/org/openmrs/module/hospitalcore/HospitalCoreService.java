@@ -131,6 +131,26 @@ public interface HospitalCoreService extends OpenmrsService {
 			String relativeName) throws APIException;
 
 	/**
+	 *
+	 * @param nameOrIdentifier name of identifier of the person
+	 * @param gender gender value to be used for searching the patient
+	 * @param age approximate age of the person
+	 * @param rangeAge age range to be used for searching the patient based on the approximated age
+	 * @param lastDayOfVisit the approximate date the patient was last in a visit
+	 * @param lastVisit  range to be used to search the patient, i.e last month, last 6 months or last year or anytime
+	 * @param relativeName name of hte patient's relative keyed in during registration
+	 * @param maritalStatus marital status of the patient
+	 * @param phoneNumber phone number of the patient
+	 * @param nationalId national id of the patient
+	 * @param fileNumber filenumber of the patient if the patient visits a special clinic
+	 * @return list of patients after the filter is executed
+	 * @throws APIException
+	 */
+	public List<Patient> searchPatient(String nameOrIdentifier,String gender,
+									   int age , int rangeAge, String lastDayOfVisit, int lastVisit,String relativeName,
+									   String maritalStatus,String phoneNumber,String nationalId,String fileNumber) throws APIException;
+
+	/**
 	 * Search patients
 	 * 
 	 * @param hql

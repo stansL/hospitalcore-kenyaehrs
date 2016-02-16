@@ -285,8 +285,7 @@ public class HospitalCoreServiceImpl extends BaseOpenmrsService implements
 	 */
 	/**
 	 * Create the global obs for a patient
-	 * 
-	 * @param patient
+	 *
 	 */
 	public Concept insertConceptUnlessExist(String dataTypeName,
 			String conceptClassName, String conceptName) throws APIException {
@@ -400,7 +399,7 @@ public class HospitalCoreServiceImpl extends BaseOpenmrsService implements
 	 * Insert a synonym to an existing concept.
 	 * 
 	 * @param concept
-	 * @param name
+	 * @param sourceCode
 	 */
 	public void insertMapping(Concept concept, String sourceName,
 			String sourceCode) {
@@ -666,6 +665,13 @@ public class HospitalCoreServiceImpl extends BaseOpenmrsService implements
 				rangeDay, relativeName);
 	}
 
+	public List<Patient> searchPatient(String nameOrIdentifier, String gender, int age, int rangeAge, String lastDayOfVisit,
+									   int lastVisit, String relativeName, String maritalStatus, String phoneNumber,
+									   String nationalId, String fileNumber) throws APIException {
+		return dao.searchPatient(nameOrIdentifier, gender, age, rangeAge, lastDayOfVisit, lastVisit, relativeName,
+				maritalStatus, phoneNumber, nationalId, fileNumber);
+	}
+
 	public List<Patient> searchPatient(String hql) {
 		return dao.searchPatient(hql);
 	}
@@ -740,7 +746,7 @@ public class HospitalCoreServiceImpl extends BaseOpenmrsService implements
 
 	/**
 	 * 
-	 * @see org.openmrs.module.hospitalcore.HospitalCoreService#getLastVisitTime(int)
+	 * @see org.openmrs.module.hospitalcore.HospitalCoreService#getLastVisitTime(Patient)
 	 */
 	public java.util.Date getLastVisitTime(Patient patientID) {
 	    return dao.getLastVisitTime(patientID);
