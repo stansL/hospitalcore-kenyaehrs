@@ -497,7 +497,11 @@ public class BillingServiceImpl extends BaseOpenmrsService implements BillingSer
 	public List<BillableService> getAllServices() throws APIException {
 		return dao.getAllServices();
 	}
-	
+
+	public List<BillableService> searchService(String name) throws APIException {
+		return dao.searchService(name);
+	}
+
 	/**
 	 * @see org.openmrs.module.billing.BillingService#getServiceByConceptId(java.lang.Integer)
 	 */
