@@ -160,12 +160,14 @@ public interface BillingDAO {
 	public BillableService getServiceById(Integer id) throws DAOException;
 	
 	public List<BillableService> getAllServices() throws DAOException;
+	public List<BillableService> searchService(String name) throws DAOException;
 	
 	public BillableService saveService(BillableService service) throws DAOException;
 	
 	public BillableService getServiceByConceptId(Integer conceptId) throws DAOException;
 	
 	public void disableService(Integer conceptId) throws DAOException;
+
 	
 	/**
 	 * PATIENT SERVICE BILL

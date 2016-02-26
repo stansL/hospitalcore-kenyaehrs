@@ -24,6 +24,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+
+import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.hibernate.Criteria;
@@ -31,9 +33,7 @@ import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.classic.Session;
-import org.hibernate.criterion.Order;
-import org.hibernate.criterion.Projections;
-import org.hibernate.criterion.Restrictions;
+import org.hibernate.criterion.*;
 import org.openmrs.Encounter;
 import org.openmrs.GlobalProperty;
 import org.openmrs.Patient;
@@ -506,6 +506,23 @@ public class HibernateBillingDAO implements BillingDAO {
 	public List<BillableService> getAllServices() throws DAOException {
 		Criteria criteria = sessionFactory.getCurrentSession().createCriteria(
 				BillableService.class);
+		return criteria.list();
+	}
+
+	/**
+	 * Searches for and returns a list (or a single item) of a billable service by the service name
+	 * @param name - text to be used to filter the billable service list returned
+	 * @return a list of @see BillableService objects whose names contain the search text
+	 * @throws DAOException
+	 */
+	public List<BillableService> searchService(String name) throws DAOException {
+		Criteria criteria = sessionFactory.getCurrentSession().createCriteria(
+				BillableService.class);
+		criteria.add(Restrictions.eq("disable", false));
+		if (StringUtils.isNotBlank(name)) {
+			criteria.add(Restrictions
+					.like("name", name, MatchMode.ANYWHERE));
+		}
 		return criteria.list();
 	}
 

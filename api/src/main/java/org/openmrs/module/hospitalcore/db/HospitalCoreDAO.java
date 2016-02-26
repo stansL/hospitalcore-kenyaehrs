@@ -47,6 +47,9 @@ public interface HospitalCoreDAO {
 	public Obs getObsGroupCurrentDate(Integer personId, Integer conceptId) throws DAOException;	
 	public Integer buildConcepts(List<ConceptModel> conceptModels);
 	public List<Patient> searchPatient(String nameOrIdentifier,String gender, int age , int rangeAge, String date, int rangeDay,String relativeName) throws DAOException;
+	public List<Patient> searchPatient(String nameOrIdentifier,String gender, int age , int rangeAge, String lastDayOfVisit,
+                                       int lastVisit,String relativeName,String maritalStatus,String phoneNumber,
+                                       String nationalId,String fileNumber) throws DAOException;
 	
 	/**
 	 * Search patients

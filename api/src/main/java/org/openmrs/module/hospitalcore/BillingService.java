@@ -226,6 +226,9 @@ public interface BillingService extends OpenmrsService {
 	
 	@Transactional(readOnly = true)
 	public List<BillableService> getAllServices() throws APIException;
+
+	@Transactional(readOnly = true)
+	public List<BillableService> searchService(String name) throws APIException;
 	
 	public BillableService saveService(BillableService service) throws APIException;
 	
